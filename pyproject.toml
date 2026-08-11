@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kedmd-dde"
+version = "0.1.0"
+description = "GPU-accelerated kernel EDMD with a local affine surrogate for delay differential equations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Santosh Mohan Rajkumar", email = "rajkumar.36@osu.edu"},
+    {name = "Dibyasri Barman", email = "barmand@miamioh.edu"},
+    {name = "Kumar Vikram Singh", email = "singhkv@miamioh.edu"},
+    {name = "Debdipta Goswami", email = "goswami.78@osu.edu"},
+]
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+# Only needed to regenerate the shipped trajectory records; see requirements-gen.txt.
+gen = ["jitcdde>=1.8"]
+
+[tool.setuptools]
+packages = ["kedmd_dde", "kedmd_dde.Utils"]
+
+# The raw trajectory records travel with the package, so load_dataset("raw_scalar.npz")
+# works from an install and not just a source checkout.
+[tool.setuptools.package-data]
+kedmd_dde = ["data/*.npz"]

@@ -1,0 +1,14 @@
+# Extra dependency for regenerating the datasets in data/ via gen_data/.
+#
+#   pip install -r requirements-gen.txt
+#
+# Equivalent to `pip install -e .[gen]` if you installed the package itself.
+#
+# jitcdde compiles the right-hand side to C at run time, so a C compiler (gcc/clang)
+# should be on PATH; without one it falls back to a slower pure-Python evaluation.
+# Nothing else needs it -- importing kedmd_dde, loading data, fitting and predicting
+# all work without it.
+
+-r requirements.txt
+
+jitcdde==1.8.3

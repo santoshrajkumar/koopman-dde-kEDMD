@@ -1,0 +1,20 @@
+# Python dependencies for the kEDMD DDE package (Python 3.10, venv: dde_env)
+#
+#   python3 -m venv dde_env
+#   source dde_env/bin/activate
+#   pip install -r requirements.txt
+#   pip install -e .
+#
+# torch is the compute backend; the default PyPI wheel bundles CUDA and runs on the
+# GPU when one is visible, falling back to the CPU otherwise. For a CPU-only install
+# (much smaller download) use instead:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# jitcdde is NOT here: it is only needed to integrate the delay systems in gen_data/,
+# and the datasets in data/ are already generated. See requirements-gen.txt.
+
+torch==2.13.0
+numpy==2.2.6
+scipy==1.15.3
+matplotlib==3.10.9
