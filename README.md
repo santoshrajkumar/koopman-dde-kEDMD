@@ -25,7 +25,7 @@
 </p>
 
 
-## 🌟 Key Features
+### 🌟 Key Features
 
 ✅ **Finite-dimensional Koopman realization for DDEs**
 
@@ -46,13 +46,13 @@
 ✅ **Reproducible by construction**
 
 
-## ❗ Why It Matters
+### ❗ Why It Matters
 
 Delay differential equations evolve on an **infinite-dimensional** phase space of history segments. Koopman methods for delay systems have therefore leaned on **heuristic delay embeddings** that compress that history into finitely many samples, **without quantifying the error they induce**. That is exactly the guarantee prediction and control need.
 
 **This work closes the gap** by making the compression explicit : a sampling operator, a reconstruction operator, and a kEDMD surrogate on the resulting finite-dimensional domain.
 
-## 🧠 Paper
+### 🧠 Paper
 
 This work is based on:
 
@@ -69,7 +69,7 @@ If you use this repository, **please cite us** 🙏
 }
 ```
 
-## 🔧 Installation
+### 🔧 Installation
 
 *Virtual environment recommended
 
@@ -93,7 +93,7 @@ The default `torch` wheel bundles CUDA. For a **CPU-only** install (much smaller
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
 
-## ⚡ Quick Demo
+### ⚡ Quick Demo
 
 ```bash
 python examples/learn_and_predict.py
@@ -127,7 +127,7 @@ That is `print_device_info(brief=True)`. Dropping `brief` gives the full report 
 - (Optional) `KEDMD_DEVICE` / `KEDMD_DTYPE` to pin device and precision ✅
 - Headless plotting: `export MPLBACKEND=Agg` ✅
 
-## 📈 Reproducing the Paper Figures
+### 📈 Reproducing the Paper Figures
 
 Every figure in the paper comes from one script:
 
@@ -135,7 +135,7 @@ Every figure in the paper comes from one script:
 python examples/pub_gen.py
 ```
 
-## 📊 Convergence of the Learned Predictor
+### 📊 Convergence of the Learned Predictor
 
 Step-wise mean prediction error `μ_{z_k}` over the 100 held-out test trajectories, scalar Hill-type DDE (`τ_d = 1 s`); the shaded band spans worst to best.
 
@@ -175,7 +175,7 @@ Current value of the state function, recovered from the lifted coordinates:
   </tr>
 </table>
 
-## 💻 Device and Precision
+### 💻 Device and Precision
 
 | Variable | Values | Default |
 | --- | --- | --- |
@@ -192,7 +192,7 @@ KEDMD_DTYPE=float32 python -m kedmd_dde.Utils.pub_gen planar_phase
 Tensors stay on the device from loading through to the error summaries; NumPy appears only at file I/O, in data generation, and after `to_numpy` for matplotlib.
 
 
-## 🧪 The Systems
+### 🧪 The Systems
 
 | system | equation | `τ_d` |
 | --- | --- | --- |
