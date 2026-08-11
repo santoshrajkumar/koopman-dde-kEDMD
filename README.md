@@ -135,18 +135,6 @@ Every figure in the paper comes from one script:
 python examples/pub_gen.py
 ```
 
-| function it calls | what it sweeps | output |
-| --- | --- | --- |
-| `m_vary` | history resolution `M`, centers matched on fill distance | `scalar_M_vary.pdf` |
-| `p_vary` | kernel-center count `p` at fixed `M` | `p_vary.pdf` |
-| `rho_vary` | local-fit radius `ρ`, radius-only neighbourhoods | `rho_vary.pdf` |
-| `scalar_phase` | one fit — true vs predicted `x(t)`, plus RMSE | `scalar_phase_new.pdf` |
-| `planar_phase` | one fit — true vs predicted `x₁(t)`, `x₂(t)`, plus RMSE | `planar_phase_new_x{1,2}.pdf` |
-
-Figures land in `figures/`. Each of those is an argument-free function in `kedmd_dde/Utils/pub_gen.py` with its settings as module constants, so a variation is an edit at the top of the block rather than a flag. `examples/pub_gen.ipynb` is the same run as a notebook.
-
-The script closes with `gen_data()`, which asks before writing anything — answer no and the shipped records are left exactly as they are.
-
 ## 📊 Convergence of the Learned Predictor
 
 Step-wise mean prediction error `μ_{z_k}` over the 100 held-out test trajectories, scalar Hill-type DDE (`τ_d = 1 s`); the shaded band spans worst to best.
